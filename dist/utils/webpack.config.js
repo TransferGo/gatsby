@@ -221,7 +221,7 @@ module.exports = function () {
                   // CSS modules
                   config.loader(`cssModules`, {
                     test: /\.module\.css$/,
-                    loader: (0, _gatsby1ConfigExtractPlugin.extractTextPlugin)(stage).extract(`style`, [(0, _gatsby1ConfigCssModules.cssModulesConfig)(stage), `postcss`])
+                    loader: (0, _gatsby1ConfigExtractPlugin.extractTextPlugin)(Object.assign({}, stage, { ignoreOrder: true }).extract(`style`, [(0, _gatsby1ConfigCssModules.cssModulesConfig)(stage), `postcss`])
                   });
 
                   return config;
